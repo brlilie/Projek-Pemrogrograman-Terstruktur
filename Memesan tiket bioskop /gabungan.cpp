@@ -157,6 +157,16 @@ bool bookTicket(vector<Ticket*>& tickets, const list<string>& movies) {
         }
     } while (!validInput);
 
+    cout << "Jam yang tersedia: 08:00 sampai 21:00" << endl;
+    do {
+        cout << "Pilih jam: ";
+        cin >> time;
+        validInput = (time >= "08:00" && time <= "21:00");
+        if (!validInput) {
+            cout << "Jam yang anda masukkan salah. Silakan coba lagi.\n";
+        }
+    } while (!validInput);
+
     cout << "Berapa tiket yang ingin dipesan: ";
     cin >> numTickets;
 
