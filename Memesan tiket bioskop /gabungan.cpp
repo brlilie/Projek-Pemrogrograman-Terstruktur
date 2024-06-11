@@ -15,6 +15,7 @@ public:
     string movie;
     string seat;
     string day;
+    string time;
     double price;
 
     Ticket(string m, string s, string d, double p) : movie(m), seat(s), day(d), price(p) {}
