@@ -201,7 +201,7 @@ bool bookTicket(vector<Ticket*>& tickets, const list<string>& movies) {
     double change = payment - totalPrice;
 
     for (int i = 0; i < numTickets; i++) {
-        tickets.push_back(new Ticket(movie, seat, day, ticketPrice));
+        tickets.push_back(new Ticket(movie, seat, day,time, ticketPrice));
     }
 
     cout << "Tiket berhasil dipesan!" << endl;
