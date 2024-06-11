@@ -15,9 +15,10 @@ public:
     string movie;
     string seat;
     string day;
+    string time;
     double price;
 
-    Ticket(string m, string s, string d, double p) : movie(m), seat(s), day(d), price(p) {}
+    Ticket(string m, string s, string d, string t, double p) : movie(m), seat(s), day(d), time(t), price(p) {}
 };
 
 // Fungsi untuk mengubah string menjadi huruf kecil
@@ -79,7 +80,9 @@ void mergeSort(vector<Ticket*>& tickets, int l, int r) {
 void displayTickets(const vector<Ticket*>& tickets) {
     cout << "\n--- Daftar Tiket ---\n";
     for (const auto& ticket : tickets) {
-        cout << "Film: " << ticket->movie << ", Kursi: " << ticket->seat << ", Hari: " << ticket->day << ", Harga: Rp" << ticket->price << endl;
+    cout << "Film: " << ticket->movie << ", Kursi: " << ticket->seat 
+     << ", Hari: " << ticket->day << ", Jam: " << ticket->time 
+     << ", Harga: Rp" << ticket->price << endl;
     }
     cout << "--------------------\n";
 }
@@ -153,6 +156,16 @@ bool bookTicket(vector<Ticket*>& tickets, const list<string>& movies) {
         validInput = (seat == "regular" || seat == "hotseat");
         if (!validInput) {
             cout << "Input yang anda masukkan salah. Silakan coba lagi.\n";
+        }
+    } while (!validInput);
+
+    cout << "Jam yang tersedia: 08:00 sampai 21:00" << endl;
+    do {
+        cout << "Pilih jam: ";
+        cin >> time;
+        validInput = (time >= "08:00" && time <= "21:00");
+        if (!validInput) {
+            cout << "Jam yang anda masukkan salah. Silakan coba lagi.\n";
         }
     } while (!validInput);
 
@@ -241,6 +254,12 @@ void refundTicket(vector<Ticket*>& tickets) {
         if (!validInput) {
             cout << "Input yang anda masukkan salah. Silakan coba lagi.\n";
         }
+    } while (!validInput);
+
+    do {
+    cout << "Jam: ";
+    cin >> time;
+    validInput = (time >= "08:00" && time <= "21:00");
     } while (!validInput);
 
     while (it != tickets.end()) {
