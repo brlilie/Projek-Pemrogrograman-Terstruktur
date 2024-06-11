@@ -18,7 +18,7 @@ public:
     string time;
     double price;
 
-    Ticket(string m, string s, string d, double p) : movie(m), seat(s), day(d), price(p) {}
+    Ticket(string m, string s, string d, string t, double p) : movie(m), seat(s), day(d), time(t), price(p) {}
 };
 
 // Fungsi untuk mengubah string menjadi huruf kecil
