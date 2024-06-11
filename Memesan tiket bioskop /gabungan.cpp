@@ -80,8 +80,9 @@ void mergeSort(vector<Ticket*>& tickets, int l, int r) {
 void displayTickets(const vector<Ticket*>& tickets) {
     cout << "\n--- Daftar Tiket ---\n";
     for (const auto& ticket : tickets) {
-        cout << "Film: " << ticket->movie << ", Kursi: " << ticket->seat << ", Hari: " << ticket->day << ", Harga: Rp" << ticket->price << endl;
-    }
+        cout << "Film: " << ticket->movie << ", Kursi: " << ticket->seat 
+     << ", Hari: " << ticket->day << ", Jam: " << ticket->time 
+     << ", Harga: Rp" << ticket->price << endl; }
     cout << "--------------------\n";
 }
 
