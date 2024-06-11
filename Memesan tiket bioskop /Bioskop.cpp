@@ -115,7 +115,7 @@ void displayPriceInfo(const list<string>& movies) {
 
 // Fungsi untuk memesan tiket
 bool bookTicket(vector<Ticket*>& tickets, const list<string>& movies) {
-    string movie, seat, day, promoCode;
+    string movie, seat, day, time, promoCode;
     int numTickets;
     char cancel;
     bool validInput;
@@ -202,7 +202,7 @@ bool bookTicket(vector<Ticket*>& tickets, const list<string>& movies) {
     double change = payment - totalPrice;
 
     for (int i = 0; i < numTickets; i++) {
-        tickets.push_back(new Ticket(movie, seat, day, ticketPrice));
+        tickets.push_back(new Ticket(movie, seat, day,time, ticketPrice));
     }
 
     cout << "Tiket berhasil dipesan!" << endl;
@@ -220,7 +220,7 @@ void refundTicket(vector<Ticket*>& tickets) {
         return;
     }
 
-    string movie, seat, day;
+    string movie, seat, day,time;
     double refundAmount = 0.0;
     vector<Ticket*>::iterator it = tickets.begin();
     bool validInput;
