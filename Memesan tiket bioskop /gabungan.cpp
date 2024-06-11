@@ -255,6 +255,12 @@ void refundTicket(vector<Ticket*>& tickets) {
         }
     } while (!validInput);
 
+    do {
+    cout << "Jam: ";
+    cin >> time;
+    validInput = (time >= "08:00" && time <= "21:00");
+    } while (!validInput);
+
     while (it != tickets.end()) {
         if ((*it)->movie == movie && (*it)->seat == seat && (*it)->day == day) {
             refundAmount += (*it)->price;
